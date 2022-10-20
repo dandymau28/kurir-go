@@ -1,0 +1,5 @@
+1. Kurir bisa liat aktivitas dia nnti berbentuk tabel (isinya nama penerima, nama rumah sakit dan waktu updatenya)
+
+2. Kurir update pengiriman pertama kedua ketiga dan seterusnya (max 5, tapi biasanya dibawah itu) , pas pilih update kurir insert data nama penerima dan nama rumah sakit trus submit
+
+Admin sih tugasnya bisa liat apa aja aktivitas dia
