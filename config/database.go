@@ -2,9 +2,7 @@ package config
 
 import (
 	"fmt"
-	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/kurir-go/app/model"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -12,16 +10,11 @@ import (
 
 // Database Connection is creating a new connection to our database
 func DatabaseConnection() *gorm.DB {
-	errEnv := godotenv.Load()
-	if errEnv != nil {
-		panic("Failed to load env file")
-	}
-
-	dbUser := os.Getenv("DB_USER")
-	dbPass := os.Getenv("DB_PASS")
-	dbHost := os.Getenv("DB_HOST")
-	dbName := os.Getenv("DB_NAME")
-	dbPort := os.Getenv("DB_PORT")
+	dbUser := "postgres"
+	dbPass := "postgres"
+	dbHost := "localhost"
+	dbName := "kurir_go"
+	dbPort := "5432"
 
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta", dbHost, dbUser, dbPass, dbName, dbPort)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
